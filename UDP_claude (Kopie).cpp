@@ -1,31 +1,3 @@
-/*
- * jetson_multicast_robust.cpp
- *
- * Production-Ready UDP Multicast Publisher/Subscriber for Embedded Linux
- * Optimized for Jetson, Raspberry Pi, and similar embedded platforms
- *
- * FEATURES:
- *  - Zero-copy binary serialization (48-byte wire format, network byte order)
- *  - Interface-specific multicast with automatic failover
- *  - Packet loss monitoring with per-system statistics
- *  - Latency measurement and warning system
- *  - Automatic group rejoin on network issues
- *  - Interface up/down detection with graceful recovery
- *  - Drift-compensated periodic transmission
- *  - Clean shutdown with proper resource cleanup
- *  - Thread-safe logging with atomic operations
- *
- * BUILD:
- *   g++ -std=c++20 -O2 -Wall -Wextra -Wpedantic -pthread \
- *       jetson_multicast_robust.cpp -o jetson_multicast
- *
- * RUN:
- *   sudo ./jetson_multicast  # May need root for multicast on some systems
- *
- * CONFIGURATION:
- *   Edit the constants in the Configuration section below
- */
-
 #include <arpa/inet.h>
 #include <errno.h>
 #include <ifaddrs.h>
